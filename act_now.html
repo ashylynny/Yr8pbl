@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitfy | Act Now</title>
+
+    <!-- Bootstrap CDN CSS Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="image/favicon.png">
+
+    <style>
+        /* act now start */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Times, serif;
+            font-size: 20px;
+        }
+/* navbar start */
+        .navbar{
+            background-color: #e67423db;
+            backdrop-filter: blur(8px);
+            padding: 10px 45px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+        }
+
+        .logo{
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .navbar-brand{
+            color: white;
+            font-size: 20px;
+            margin-left: 20px;
+        }
+
+        .navbar-brand:hover{
+            color: white;
+        }
+        .navbar .nav-link.active {
+            border-bottom: 2px solid #ebd9cbc7;
+            color: #e9dbd4;
+        }
+        .dropdown-menu .dropdown-item.active {
+            border-bottom: 2px solid #ebd9cbc7;
+            color: #e9dbd4;
+            background-color: #e67423db;
+        }
+        .middle-links{
+            margin-left: 220px;
+        }
+
+        .nav-link{
+            color: white;
+            font-size: 18px;
+            margin: 0 22px;
+        }
+
+        .nav-link:hover{
+            color: #e9dbd4;
+            transition: 0.3s;
+            border-bottom: 2px solid #ebd9cbc7;
+        }
+
+        .dropdown-menu .dropdown-item:hover{
+            color: #e37738c7;
+            transition: 0.3s;
+            border-bottom: 2px solid #ebd9cbc7;
+        }
+
+
+        /* toggler */
+        .navbar-toggler{
+            border: none;
+        }
+
+        .navbar-toggler:focus{
+            box-shadow: none;
+        }
+
+        .navbar-toggler i{
+            color: white;
+            font-size: 28px;
+        }
+        /* toggler end */
+
+        /* offcanvas */
+        .offcanvas{
+            background-color: white;
+        }
+
+        .offcanvas-title{
+            color: white;
+        }
+
+        .btn-close{
+            filter: brightness(0) invert(1);
+        }
+
+        .offcanvas .nav-link{
+            color: rgb(0, 0, 0);
+            margin: 10px 20px;
+        }
+
+        .offcanvas .nav-link:hover{
+            color: #ff8c00;
+        }
+        /* navbar end */
+        .main-color {
+            color: #ff8c00;
+        }
+
+        /* CARDS */
+        .card-style {
+            background: white;
+            border-radius: 18px;
+            padding: 25px;
+            height: 100%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .card-style:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(230,116,35,0.25);
+        }
+
+        .icon {
+            font-size: 42px;
+            color: #2a2d29db;
+            margin-bottom: 10px;
+        }
+
+        /* IMPACT BOX */
+        .box {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            height: 100%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            transition: 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-6px);
+        }
+        /* act now end */
+
+        /* map start */
+            .map-container{
+      position: relative;
+      width: 100%;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .map-container img{
+      width: 100%;
+      height: 50%;
+      display: block;
+    }
+
+    /* Orange points */
+
+    .hotspot{
+      width: 25px;
+      height: 25px;
+      background: #ff8c00;
+      border: 3px solid white;
+      border-radius: 50%;
+
+      position: absolute;
+      cursor: pointer;
+    }
+
+    .hotspot:hover{
+      transform: scale(1.1);
+    }
+
+    /* info card */
+
+    .info-card{
+      position: absolute;
+      width: 400px;
+      border: #ff8c00 2px solid;
+
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(230,116,35,0.25);
+
+      padding: 30px;
+      visibility: hidden;
+    }
+
+    /* show info card */
+
+    #pyay:target,
+    #baho:target,
+    #bayintnaung:target,
+    #parami:target,
+    #kabaraye:target{
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .option-btn{
+      width: 100%;
+      border: none;
+      background-color: #ffeeccaa;
+
+      padding: 14px;
+      border-radius: 12px;
+
+      margin-bottom: 12px;
+    }
+
+    .option-btn:hover{
+      background-color: #ffeecc;
+    }
+
+    .close-btn{
+      background: #ff8c00;
+      color: white;
+
+      padding: 10px 24px;
+      border-radius: 10px;
+
+      text-decoration: none;
+      display: inline-block;
+    }
+    .close-btn:hover {
+      background-color: #c95f15;
+      color: white;
+    }
+
+    @media(max-width: 768px){
+
+      .info-card{
+        width: 90%;
+        left: 50% !important;
+        transform: translateX(-50%);
+      }
+
+    }
+        /* footer start */
+        footer {
+            background-color: #e67423db;
+            color: #ffffff;
+            font-family: "Times New Roman", serif;
+        }
+
+        .accent {
+            color: #f6f6f6;
+        }
+
+        footer p,
+        footer li,
+        footer span {
+            color: #ffffff;
+        }
+
+        footer h2,
+        footer h6 {
+            color: #ffffff;
+        }
+
+        .input-group input {
+            border: none;
+        }
+
+        .input-group button {
+            background-color: #e4650adb;
+            border: none;
+            color: white;
+        }
+
+        .input-group button:hover {
+            background-color: #ff9f43;
+        }
+
+        .border-start {
+            border-color: rgba(255, 255, 255, 0.2) !important;
+        }
+
+        .icon-hover i {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .icon-hover i:hover {
+            color: #ff9f43;
+        }
+
+        .footer-bottom {
+            background-color: #f4f4f4;
+        }
+
+        .footer-bottom span {
+            color: #e67423db;
+        }
+        /* footer end */
+    </style>
+</head>
+
+<body>
+    <!-- navbar start -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand d-flex align-items-center" style="color: white;"><img src="image/logo.jpg" class="logo me-2">Transitfy</a>
+
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_nav"> <i class="bi bi-list"></i></button>
+
+            <div class="collapse navbar-collapse d-none d-lg-flex">
+                <ul class="navbar-nav middle-links">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Team</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="aboutus.html" class="dropdown-item p-2 ps-3">About Us</a></li>
+                            <li><a href="contact.html" class="dropdown-item p-2 ps-3">Contact Us</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="Benefits.html">Benefits</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="smart_transport.html" class="dropdown-item">Smart Transport</a></li>
+                            <li><a href="roadsafety.html" class="dropdown-item">Road Safety</a></li>
+                            <li><a href="tracking_routes.html" class="dropdown-item">Route Tracking</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="act_now.html">Act Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- offcanvas -->
+    <div class="offcanvas offcanvas-start" id="offcanvas_nav">
+        <div class="offcanvas-header mt-5">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Team</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="aboutus.html" class="dropdown-item">About Us</a></li>
+                        <li><a href="contact.html" class="dropdown-item">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="Benefits.html">Benefits</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="smart_transport.html" class="dropdown-item">Smart Transport</a></li>
+                        <li><a href="roadsafety.html" class="dropdown-item">Road Safety</a></li>
+                        <li><a href="tracking_routes.html" class="dropdown-item">Route Tracking</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link active" href="act_now.html">Act Now</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- navbar end -->
+
+    <!-- act now start -->
+    <section class="py-5" style="margin-top: 80px; background: linear-gradient(135deg, #fffcf5 0%, #ffe8d1 100%)">
+        <div class="container text-center mb-4">
+            <h1 class="fw-bold main-color">Take Action</h1>
+            <p class="text-muted mx-5 mb-5">
+                Every small decision you make today can reduce traffic, pollution, and energy waste.
+                Together, these actions help build a smarter and more sustainable Yangon by 2040.
+            </p>
+        </div>
+
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card-style">
+                        <i class="bi bi-person-walking icon"></i>
+                        <h5 class="fw-bold main-color">Walk Short Distances</h5>
+                        <p class="text-muted">
+                            Walking instead of taking a vehicle for short trips reduces traffic congestion,
+                            lowers carbon emissions, and improves personal health and fitness.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card-style">
+                        <i class="bi bi-bus-front icon"></i>
+                        <h5 class="fw-bold main-color">Use Public Transport</h5>
+                        <p class="text-muted">
+                            Public transport helps move more people efficiently, reduces fuel usage,
+                            and significantly decreases road congestion in busy city areas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card-style">
+                        <i class="bi bi-car-front icon"></i>
+                        <h5 class="fw-bold main-color">Carpool with Others</h5>
+                        <p class="text-muted">
+                            Sharing rides reduces the number of vehicles on the road,
+                            saves transportation costs, and helps reduce air pollution levels.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card-style">
+                        <i class="bi bi-bicycle icon"></i>
+                        <h5 class="fw-bold main-color">Cycle for Travel</h5>
+                        <p class="text-muted">
+                            Cycling is a zero-emission transport option that reduces pollution,
+                            improves health, and is perfect for short-distance travel.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card-style">
+                        <i class="bi bi-ev-front icon"></i>
+                        <h5 class="fw-bold main-color">Support Electric Vehicles</h5>
+                        <p class="text-muted">
+                            Electric vehicles reduce dependency on fossil fuels and help create
+                            a cleaner and more modern transport system for the future.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card-style">
+                        <i class="bi bi-people icon"></i>
+                        <h5 class="fw-bold main-color">Spread Awareness</h5>
+                        <p class="text-muted">
+                            Encouraging others to adopt sustainable transport habits creates a
+                            stronger environmental impact across the whole community.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section style="background:white; padding:60px 0;">
+        <div class="container text-center mb-4">
+            <h2 class="fw-bold main-color">Why It Matters</h2>
+            <p class="text-muted">
+                These actions may look small, but together they create long-term change for the city.
+            </p>
+        </div>
+
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="box" style="border-left: 5px solid #ff8c00;">
+                        <h5 class="fw-bold">Less Traffic Congestion</h5>
+                        <p class="text-muted">
+                            Fewer private vehicles lead to smoother traffic flow and faster daily travel.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="box"  style="border-left: 5px solid #000000db;">
+                        <h5 class="fw-bold">Cleaner Air Quality</h5>
+                        <p class="text-muted">
+                            Reduced emissions from vehicles improve air quality and public health.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="box"  style="border-left: 5px solid #ff8c00;">
+                        <h5 class="fw-bold">Lower Transport Cost</h5>
+                        <p class="text-muted">
+                            Using shared and active transport reduces daily expenses significantly.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="box"  style="border-left: 5px solid #000000db;">
+                        <h5 class="fw-bold">Healthier Lifestyle</h5>
+                        <p class="text-muted">
+                            Walking and cycling increase physical activity and reduce stress levels.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="box" style="border-left: 5px solid #ff8c00;">
+                        <h5 class="fw-bold">Smarter City Growth</h5>
+                        <p class="text-muted">
+                            Sustainable transport supports better urban planning and city efficiency.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="box"  style="border-left: 5px solid #000000db;">
+                        <h5 class="fw-bold">Future Yangon (2040)</h5>
+                        <p class="text-muted">
+                            A cleaner, smarter, and more efficient city with improved quality of life.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- act now end -->
+
+    <!-- Map start -->
+     <div class="container my-5">
+    <div class="row mx-auto">
+      <div class="col-lg-4">
+        <h1 style="color: #ff8c00;"><b>Congestion time schedules, avoid them to avoid traffic!</b></h1>
+        <p style="font-size: 20px; margin-top: 20px;">The places in the image is a popular downtown area in Yangon city.</p>
+        <p style="font-size: 20px; margin-top: 20px;">The the map contains location, time, and reasons of why traffic occures in these places.</p>
+        <p style="font-size: 20px; margin-top: 20px;">Click on the orange dots on the map to see detailed information of which road to avoid during specific hours.</p>
+      </div>
+      <div class="col-md-12 col-lg-8">
+        <div class="map-container">
+
+    <!-- BACKGROUND IMAGE -->
+    <img src="image/ygnmap.jpg" alt="Map">
+
+
+    <!-- RED DOTS -->
+
+    <a href="#pyay" class="hotspot" style="top: 80%; left: 40%;"></a>
+    <a href="#baho" class="hotspot" style="top: 60%; left: 31%;"></a>
+    <a href="#parami" class="hotspot" style="top: 24%; left: 48%;"></a>
+    <a href="#kabaraye" class="hotspot" style="top: 64%; left: 58%;"></a>
+    <a href="#bayintnaung" class="hotspot" style="top: 9%; left: 17%;"></a>
+
+
+
+    <!-- Pyay -->
+    <div class="info-card" id="pyay" style="top: 15%; left: 28%;">
+      <h2 class="fw-bold text-center mb-4">Pyay Road</h2>
+
+      <p class="text-center fs-4">Rush Hours</p>
+      <button class="option-btn">7:00am - 9:00am</button>
+      <button class="option-btn">4:30pm - 6:30pm</button>
+      <p class="text-center py-2" style="font-size: 17px;">Average speed drops under 15km/hr during peak hours. Typically occures near Junction Square mall.</p>
+
+      <div class="text-center mt-3"><a href="#close" class="close-btn">Close</a></div>
+
+    </div>
+
+    <!-- baho -->
+    <div class="info-card" id="baho" style="top: 15%; left: 35%;">
+      <h2 class="fw-bold text-center mb-4">Baho Road</h2>
+
+      <p class="text-center fs-4">Rush Hours</p>
+      <button class="option-btn">7:00am - 9:00am</button>
+      <button class="option-btn">5:00pm - 7:30pm</button>
+      <p class="text-center py-2" style="font-size: 17px;">Maximum 60 minutes wait with the speed dropping up to 15km/hr due to busy malls.</p>
+
+      <div class="text-center mt-3"><a href="#close" class="close-btn">Close</a></div>
+
+    </div>
+
+    <!-- Parami -->
+    <div class="info-card" id="parami" style="top: 15%; left: 28%;">
+      <h2 class="fw-bold text-center mb-4">Parami Road</h2>
+
+      <p class="text-center fs-4">Rush Hours</p>
+      <button class="option-btn">7:00am - 9:00am</button>
+      <button class="option-btn">4:30pm - 7:30pm</button>
+      <p class="text-center py-2" style="font-size: 17px;">Intersections at Pyay Road and Kabar Aye Pagoda road causes occasional traffic.</p>
+
+      <div class="text-center mt-3"><a href="#close" class="close-btn">Close</a></div>
+    </div>
+
+    <!-- kabar aye -->
+    <div class="info-card" id="kabaraye" style="top: 15%; left: 10%;">
+      <h2 class="fw-bold text-center mb-4">Kabar Aye Pagoda Road</h2>
+
+      <p class="text-center fs-4">Rush Hours</p>
+      <button class="option-btn">7:00am - 9:00am</button>
+      <button class="option-btn">5:30pm - 7:30pm</button>
+      <p class="text-center py-2" style="font-size: 17px;">Delays at intersections and cars converging plus foot commercial to Myanmar Plaza or Inya Lake.</p>
+
+      <div class="text-center mt-3"><a href="#close" class="close-btn">Close</a></div>
+
+    </div>
+
+    <!-- bayint naung -->
+    <div class="info-card" id="bayintnaung" style="top: 15%; left: 20%;">
+      <h2 class="fw-bold text-center mb-4">Bayint Naung Road</h2>
+
+      <p class="text-center fs-4">Rush Hours</p>
+      <button class="option-btn">7:00am - 9:30am</button>
+      <button class="option-btn">4:30pm - 7:30pm</button>
+      <p class="text-center py-2" style="font-size: 17px;">Heavy goods vehicles at Bayint Naung Market block lanes to which causes congestion.</p>
+
+      <div class="text-center mt-3"><a href="#close" class="close-btn">Close</a></div>
+    </div>
+
+
+    </div>
+
+  </div>
+      </div>
+    </div>
+     <!-- Map end -->
+
+    <!-- footer start -->
+    <footer class="pt-5">
+        <div class="container">
+            <div class="row">
+                <!-- left section -->
+                <div class="col-md-6 mb-4">
+                    <h2><span class="accent">Transitfy</span></h2>
+                    <p class="small">
+                        Transitfy is a Smart Mobility & Traffic Management Portal designed to improve urban transportation,
+                        reduce traffic congestion, and promote safer, smarter, and more sustainable mobility systems.
+                    </p>
+                    <h5 class="mt-4">Stay Updated</h5>
+                    <form>
+                        <div class="input-group mt-2">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+
+                            <button type="reset" class="btn">
+                                <i class="bi bi-send-fill"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- right section -->
+                <div class="col-md-6 border-start ps-4">
+                    <div class="row small">
+                        <div class="col-md-4 mb-3">
+                            <h6 class="border-bottom pb-1">Pages</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-chevron-right"></i> <a href="index.html" style="text-decoration: none; color: white;">Home</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="aboutus.html" style="text-decoration: none; color: white;">About Us</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="act_now.html" style="text-decoration: none; color: white;">Take Action</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="https://www.canva.com/design/DAHKffhsYi8/CIiL7inv6dd82UL4MmbrsA/edit" target="_blank" style="text-decoration: none; color: white;">Credit</a></li>
+                            </ul>
+                        </div>
+
+                      
+                        <div class="col-md-4 mb-3">
+                            <h6 class="border-bottom pb-1">Members</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-person"></i> Yay Chan Maung</li>
+                                <li><i class="bi bi-person"></i> Kyi Phyu Phyo Thant</li>
+                                <li><i class="bi bi-person"></i> Myat Noe Thadar</li>
+                                <li><i class="bi bi-person"></i> Sai Kyaut Zet Hin Hseng</li>
+                            </ul>
+                        </div>
+
+
+                        <div class="col-md-4 mb-3">
+                            <h6 class="border-bottom pb-1">Contact</h6>
+                            <p><i class="bi bi-geo-alt-fill accent"></i> Yangon, Myanmar</p>
+                            <p><i class="bi bi-telephone-fill accent"></i> +959 78934240</p>
+                            <p><i class="bi bi-envelope-fill accent"></i> transitfy.portal@gmail.com</p>
+
+                            <div class="icon-hover mt-2">
+                                <i class="bi bi-facebook me-2"></i>
+                                <i class="bi bi-youtube me-2"></i>
+                                <i class="bi bi-instagram me-2"></i>
+                                <i class="bi bi-twitter-x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4 py-3 footer-bottom">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start small">
+                <span class="mb-2 mb-md-0">©2026 Transitfy. All rights reserved.</span>
+                <div class="d-flex gap-3">
+                    <span>Privacy Policy</span>
+                    <span>Terms of Service</span>
+                    <span>Cookies</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+<!-- Bootstrip CDN JS Link -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<!-- AOS JS Link -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Initiate AOS -->
+<script>AOS.init();</script>
+
+</body>
+</html>

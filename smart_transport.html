@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitfy | Smart Transport</title>
+     <!-- Bootstrap CDN CSS Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Bootstrap CDN Icon Links -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- AOS CSS LInk -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="image/favicon.png">
+    
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Times, serif;   
+        }
+        /* navbar start */
+        .navbar{
+            background-color: #e67423db;
+            backdrop-filter: blur(8px);
+            padding: 10px 45px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+        }
+
+        .logo{
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .navbar-brand{
+            color: white;
+            font-size: 20px;
+            margin-left: 20px;
+        }
+
+        .navbar-brand:hover{
+            color: white;
+        }
+        .navbar .nav-link.active {
+            border-bottom: 2px solid #ebd9cbc7;
+            color: #e9dbd4;
+        }
+        .dropdown-menu .dropdown-item.active {
+            border-bottom: 2px solid #ebd9cbc7;
+            color: #e9dbd4;
+            background-color: #e67423db;
+        }
+        .middle-links{
+            margin-left: 220px;
+        }
+
+        .nav-link{
+            color: white;
+            font-size: 18px;
+            margin: 0 22px;
+        }
+
+        .nav-link:hover{
+            color: #e9dbd4;
+            transition: 0.3s;
+            border-bottom: 2px solid #ebd9cbc7;
+        }
+
+        .dropdown-menu .dropdown-item:hover{
+            color: #e37738c7;
+            transition: 0.3s;
+            border-bottom: 2px solid #ebd9cbc7;
+        }
+
+
+        /* toggler */
+        .navbar-toggler{
+            border: none;
+        }
+
+        .navbar-toggler:focus{
+            box-shadow: none;
+        }
+
+        .navbar-toggler i{
+            color: white;
+            font-size: 28px;
+        }
+        /* toggler end */
+
+        /* offcanvas */
+        .offcanvas{
+            background-color: white;
+        }
+
+        .offcanvas-title{
+            color: white;
+        }
+
+        .btn-close{
+            filter: brightness(0) invert(1);
+        }
+
+        .offcanvas .nav-link{
+            color: rgb(0, 0, 0);
+            margin: 10px 20px;
+        }
+
+        .offcanvas .nav-link:hover{
+            color: #ff8c00;
+        }
+        /* navbar end */
+        /* News start */
+        .news-card {
+            border: none;
+        }
+        .news-card:hover {
+            transform:translateY(-8px);
+            box-shadow:0 12px 30px rgba(230,116,35,0.15);
+        }
+        /* News end */
+
+        /* Tab pane start */
+        .tab-pane .nav-item .nav-link{
+            color: #ff8c00;
+            margin: 15px 0;
+            font-weight: bolder;
+        }
+        .tab-pane .nav-item .nav-link.active {
+            background-color: #ff8c00;
+            color: white;
+        }
+        .tab-pane-card:hover {
+            transform:translateY(-8px);
+            box-shadow:0 6px 15px rgba(230,116,35,0.15);
+        }
+        .other-countries {
+            margin-left: 50px;
+        }
+        .title {
+            margin-left: 50px;
+        }
+        /* Tab pane end */
+
+        /* Media query start */
+        @media(max-width:768px){
+            .title{
+                margin-left: 0px;
+                margin: auto;
+                text-align: center;
+            }
+            .other-countries {
+                margin: 0;
+            }
+            .news-title {
+                text-align: center;
+                margin: auto;
+            }
+        }
+        /* Media query end */
+
+        /* detailed impacts start */
+        .smart-box{
+      border: 3px solid #000000db;
+      padding: 40px;
+      position: relative;
+      font-size: 20px;
+      border-radius: 12px;
+    }
+
+    .smart-box h2{
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .smart-box ul{
+      padding-left: 20px;
+    }
+
+    .smart-box li{
+        margin-bottom: 20px;
+    }
+
+    .circle-img{
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 3px solid #000000db;
+      object-fit: cover;
+
+      position: absolute;
+      top: -60px;
+      right: -60px;
+
+      background: white;
+    }
+    .near-img {
+        margin-right: 100px;
+    }
+    @media (max-width: 768px){
+
+      .smart-box{
+        padding-top: 140px;
+      }
+
+      .circle-img{
+        width: 180px;
+        height: 180px;
+
+        top: -60px;
+        right: 50%;
+        transform: translateX(50%);
+      }
+
+      .smart-box h2{
+        text-align: center;
+      }
+      .near-img {
+        margin-right: 0;
+      }
+    }
+        /* detailed impacts end */
+
+       /* footer start */
+        footer {
+            background-color: #e67423db;
+            color: #ffffff;
+            font-family: "Times New Roman", serif;
+        }
+
+        .accent {
+            color: #f6f6f6;
+        }
+
+        footer p,
+        footer li,
+        footer span {
+            color: #ffffff;
+        }
+
+        footer h2,
+        footer h6 {
+            color: #ffffff;
+        }
+
+        .input-group input {
+            border: none;
+        }
+
+        .input-group button {
+            background-color: #e4650adb;
+            border: none;
+            color: white;
+        }
+
+        .input-group button:hover {
+            background-color: #ff9f43;
+        }
+
+        .border-start {
+            border-color: rgba(255, 255, 255, 0.2) !important;
+        }
+
+        .icon-hover i {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .icon-hover i:hover {
+            color: #ff9f43;
+        }
+
+        .footer-bottom {
+            background-color: #f4f4f4;
+        }
+
+        .footer-bottom span {
+            color: #e67423db;
+        }
+        /* footer end */
+    </style>
+</head>
+<body>
+
+    <!-- navbar start -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand d-flex align-items-center" style="color: white;"><img src="image/logo.jpg" class="logo me-2">Transitfy</a>
+
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_nav"> <i class="bi bi-list"></i></button>
+
+            <div class="collapse navbar-collapse d-none d-lg-flex">
+                <ul class="navbar-nav middle-links">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Team</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="aboutus.html" class="dropdown-item p-2 ps-3">About Us</a></li>
+                            <li><a href="contact.html" class="dropdown-item p-2 ps-3">Contact Us</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="Benefits.html">Benefits</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="smart_transport.html" class="dropdown-item active">Smart Transport</a></li>
+                            <li><a href="roadsafety.html" class="dropdown-item">Road Safety</a></li>
+                            <li><a href="tracking_routes.html" class="dropdown-item">Route Tracking</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="act_now.html">Act Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- offcanvas -->
+    <div class="offcanvas offcanvas-start" id="offcanvas_nav">
+        <div class="offcanvas-header mt-5">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Team</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="aboutus.html" class="dropdown-item">About Us</a></li>
+                        <li><a href="contact.html" class="dropdown-item">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="Benefits.html">Benefits</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="smart_transport.html" class="dropdown-item">Smart Transport</a></li>
+                        <li><a href="roadsafety.html" class="dropdown-item">Road Safety</a></li>
+                        <li><a href="tracking_routes.html" class="dropdown-item">Route Tracking</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="act_now.html">Act Now</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- navbar end -->
+
+    <!-- News start -->
+   <div class="container" style="margin-top: 150px;">
+    <h1 class="news-title my-4" style="color: #ff8c00;"><b>Official Public Transport Developments In Myanmar</b></h1>
+    <div class="row">
+        <div class="card news-card col-lg-6 my-4">
+            <div class="row">
+                <div class="col-md-4 p-3">
+                <img src="image/trainstation.jpg" class="rounded" alt="train station" style="object-fit: cover; width: 100%; height: 100%;">
+                </div>
+                <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><h3 style="color: #ff8c00;"><b>Recent Train Development</b></h3></h5>
+                    <p class="card-text mt-3" style="font-size: 20px;">As of April 2026, Myanmar has been developing battery-operated trains for the Yangon Circular Railway. This modernizes public transport and increases efficiency.</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 1 week ago</small></p>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="card news-card col-lg-6 my-4">
+            <div class="row">
+                <div class="col-md-4 p-3">
+                <img src="image/ebus.jpg" class="rounded" alt="bus" style="object-fit: cover; width: 100%; height: 100%;">
+                </div>
+                <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><h3 style="color: #ff8c00;"><b>Ongoing bus project</b></h3></h5>
+                    <p class="card-text mt-3" style="font-size: 20px;">Yangon Region Public Transport Committee is currently having trial phases for EV buses. The organizers hope to establish an all EV bus system around 2040 - 2050.</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 1 month ago</small></p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card news-card col-lg-6 my-4">
+            <div class="row">
+                <div class="col-md-4 p-3">
+                <img src="image/ev-taxi.jpg" class="rounded" alt="ev taxi" style="object-fit: cover; width: 100%; height: 100%;">
+                </div>
+                <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><h3 style="color: #ff8c00;"><b>Increasing EV taxi service</b></h3></h5>
+                    <p class="card-text mt-3" style="font-size: 20px;">EV taxi services has been growing ever since 2025 to now over 30 luxury operations. This new change is impacting positively on the environment, economy and the nation.</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 months ago</small></p>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="card news-card col-lg-6 my-4">
+            <div class="row">
+                <div class="col-md-4 p-3">
+                <img src="image/newbus.jpg" class="rounded" alt="ev bus" style="object-fit: cover; width: 100%; height: 100%;">
+                </div>
+                <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><h3 style="color: #ff8c00;"><b>New environmental activities</b></h3></h5>
+                    <p class="card-text mt-3" style="font-size: 20px;">Yangon official committees annouced to reduce high air level by taking action on public transport. They have stated to electricfy community travel by 2040.</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 5 months ago</small></p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+   <!-- News end -->
+
+   <!-- other countries start -->
+   <div class="container-fluid tab-pane my-5 mx-auto p-3" style="font-size: 20px;">
+    <div class="row other-countries">
+        <h1 class="title my-4 pe-5" style="color: #ff8c00; margin-bottom: 20px;"><b>Smart Transportation Systems And Management Around The World</b></h1>
+        <div class="row d-flex justify-content-center mx-auto">
+            <div class="col-md-3" style="font-size: 20px; background-color: #fff3ec; border-radius: 10px;">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item"><a href="#EV" class="nav-link active" data-bs-toggle="tab">Electrifying transportation vehicles</a></li>
+                    <li class="nav-item"><a href="#car-free-zones" class="nav-link" data-bs-toggle="tab">Car-free zones</a></li>
+                    <li class="nav-item"><a href="#cycling" class="nav-link" data-bs-toggle="tab">Cycling infrastructure </a></li>
+                    <li class="nav-item"><a href="#bus-lanes" class="nav-link" data-bs-toggle="tab">Enhanced bus lanes</a></li>
+                    <li class="nav-item"><a href="#road-pricing" class="nav-link" data-bs-toggle="tab">Road pricing </a></li>
+                </ul>
+            </div>
+            <div class="col-md-8 mx-3">
+                <div class="tab-content mt-4">
+                    <div class="tab-pane active" id="EV">
+                        <h2 style="color: #ff8c00;"><b>Electrifying transportation vehicles</b></h2>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="card tab-pane-card mt-4 m-2" style="border-width: 4px; border-color: white;">
+                        
+                                    <div class="card-body p-0" style="background-color: white;">
+                                        <img src="image/shenzhen.jpg" alt="shenzhen bus" class="card-img-top" style="height: 230px; object-fit: cover;">
+                                        <h4 class="card-title px-3 pt-3">China rapid EV expansion</h4>
+                                        <p class="card-text p-3">Shenzhen buses are all electrified. Currently stated to have a good air quality with no risk factors.</p>
+                                    </div>
+                                    <div class="card-footer"  style="background-color: white;">
+                                        <p style="font-size: small;">Photo from Shenzhen, China</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="card tab-pane-card mt-4 m-2" style="border-width: 4px; border-color: white;">
+                        
+                                    <div class="card-body p-0" style="background-color: white;">
+                                        <img src="image/norway.webp" alt="norway bus" class="card-img-top" style="height: 230px; object-fit: cover;">
+                                        <h4 class="card-title px-3 pt-3">Norway with highest EV adoption rate</h4>
+                                        <p class="card-text p-3">89% of all transport is electric, aiming towards 100% in the future.</p>
+                                    </div>
+                                    <div class="card-footer"  style="background-color: white;">
+                                        <p style="font-size: small;">Norway public EV network</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="car-free-zones">
+                        <h2 style="color: #ff8c00;"><b>Car-free zones</b></h2>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="card tab-pane-card mt-4 m-2" style="border-width: 4px; border-color: white;">
+                        
+                                    <div class="card-body p-0" style="background-color: white;">
+                                        <img src="image/barcelona.jpg" alt="barcelona" class="card-img-top" style="height: 230px; object-fit: cover;">
+                                        <h4 class="card-title px-3 pt-3">Barcelona public health</h4>
+                                        <p class="card-text p-3">Barcelona transformed multi-block neighborhoods into pedestrian-friendly zones.</p>
+                                    </div>
+                                    <div class="card-footer"  style="background-color: white;">
+                                        <p style="font-size: small;">Located in Spain</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="card tab-pane-card mt-4 m-2" style="border-width: 4px; border-color: white;">
+                        
+                                    <div class="card-body p-0" style="background-color: white;">
+                                        <img src="image/paris.jpg" alt="paris" class="card-img-top" style="height: 230px; object-fit: cover;">
+                                        <h4 class="card-title px-3 pt-3">Paris drastic traffic reduction</h4>
+                                        <p class="card-text p-3">Paris reclaimed city landscapes from cars to promote walking, cycling, and green spaces. </p>
+                                    </div>
+                                    <div class="card-footer"  style="background-color: white;">
+                                        <p style="font-size: small;">Car free day in Paris</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="cycling">
+                        <h2 style="color: #ff8c00;"><b> Cycling infrastructure</b></h2>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="card tab-pane-card mt-4 m-2" style="border-width: 4px; border-color: white;">
+                        
+                                    <div class="card-body p-0" style="background-color: white;">
+                                        <img src="image/denmark.webp" alt="copenhegan" class="card-img-top" style="height: 230px; object-fit: cover;">
+                                        <h4 class="card-title px-3 pt-3">Copenhegan called the city of cyclists</h4>
+                                        <p class="card-text p-3">Copenhegan is known to be most bike friendly city with its safe cycling tracks.</p>
+                                    </div>
+                                    <div class="card-footer"  style="background-color: white;">
+                                        <p style="font-size: small;">City in Denmark</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="card tab-pane-card mt-4 m-2" style="border-width: 4px; border-color: white;">
+                        
+                                    <div class="card-body p-0" style="background-color: white;">
+                                        <img src="image/amstersan.jpg" alt="amsterdam" class="card-img-top" style="height: 230px; object-fit: cover;">
+                                        <h4 class="card-title px-3 pt-3">Amsterdam's over 500km seperated cycling tracks</h4>
+                                        <p class="card-text p-3">Amsterdam lead in designing safe, extensive bike lanes.</p>
+                                    </div>
+                                    <div class="card-footer"  style="background-color: white;">
+                                        <p style="font-size: small;">Capital of Netherlands</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="bus-lanes">
+                        <h2 style="color: #ff8c00;"><b>Enhanced bus lanes</b></h2>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="card tab-pane-card mt-4 m-2" style="border-width: 4px; border-color: white;">
+                        
+                                    <div class="card-body p-0" style="background-color: white;">
+                                        <img src="image/brazil.jpg" alt="Curitiba" class="card-img-top" style="height: 230px; object-fit: cover;">
+                                        <h4 class="card-title px-3 pt-3">Physically separated bus lanes</h4>
+                                        <p class="card-text p-3">Curitiba, Brazil, developed high frequency, dedicated-lanes that are faster than private vehicles.</p>
+                                    </div>
+                                    <div class="card-footer"  style="background-color: white;">
+                                        <p style="font-size: small;">World's first Bus Rapid Transit system.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="card tab-pane-card mt-4 m-2" style="border-width: 4px; border-color: white;">
+                        
+                                    <div class="card-body p-0" style="background-color: white;">
+                                        <img src="image/sk.webp" alt="south korea" class="card-img-top" style="height: 230px; object-fit: cover;">
+                                        <h4 class="card-title px-3 pt-3">South Korea's bus only lanes</h4>
+                                        <p class="card-text p-3">Bus lanes are marked by distinct blue road lines and signs, enforced by active monitoring.</p>
+                                    </div>
+                                    <div class="card-footer"  style="background-color: white;">
+                                        <p style="font-size: small;">Picture from Busan city</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="road-pricing">
+                        <h2 style="color: #ff8c00;"><b>Road pricing</b></h2>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="card tab-pane-card mt-4 m-2" style="border-width: 4px; border-color: white;">
+                        
+                                    <div class="card-body p-0" style="background-color: white;">
+                                        <img src="image/singapore_erp.jpg" alt="singapore" class="card-img-top" style="height: 230px; object-fit: cover;">
+                                        <h4 class="card-title px-3 pt-3">Singapore congestion-management</h4>
+                                        <p class="card-text p-3">Singapore charges vehicles during peak congestion hours to encourage public transportation use.</p>
+                                    </div>
+                                    <div class="card-footer"  style="background-color: white;">
+                                        <p style="font-size: small;">First city to propose the idea</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="card tab-pane-card mt-4 m-2" style="border-width: 4px; border-color: white;">
+                        
+                                    <div class="card-body p-0" style="background-color: white;">
+                                        <img src="image/londoon.webp" alt="london" class="card-img-top" style="height: 230px; object-fit: cover;">
+                                        <h4 class="card-title px-3 pt-3">London's congestion schemes</h4>
+                                        <p class="card-text p-3"> £18 daily Congestion Charge in large city zones with schedules by using camera monitors.</p>
+                                    </div>
+                                    <div class="card-footer"  style="background-color: white;">
+                                        <p style="font-size: small;">Photo from OECD org</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- other countries end -->
+
+    <!-- detailed impacts start -->
+     <div class="container smart my-5">
+
+    <div class="row">
+        <div class="col-lg-12 smart-box">
+
+      <img src="image/smartroad.jpg" alt="road"class="circle-img">
+
+      <h2 style="color: #ff8c00;"><b>What are the impacts of these systems?</b></h2>
+
+      <ul>
+        <li class="near-img"><b style="color: #ff8c00;">Electrifying transportation vehicles</b> reduce carbon emssions. contributing to a more healthy environment and also decreases noise pollution.</li>
+        <li><b style="color: #ff8c00;">Car-free zones</b> promote walking, cycling and increase green spaces which not only improves public health but clean the atmosphere.</li>
+        <li><b style="color: #ff8c00;">Cycling infrastructure</b> enchances safety for cyclists, improves the overall public health, lowers carbon emissions and reduce frequent traffic congestions.</li>
+        <li><b style="color: #ff8c00;">Enhanced bus lanes</b> provides dedicated lanes for public transport buses which shows reliability among citizens by cutting down occasional traffic and decreasing time taken when traveling.</li>
+        <li><b style="color: #ff8c00;">Road pricing</b> cuts down huge congestions and effectively increases public safety for pedestrians and cyclists as there's a fine for accidents, too.</li>
+      </ul>
+
+    </div>
+    </div>
+
+  </div>
+     <!-- detailed impacts end -->
+
+    <!-- footer start -->
+    <footer class="pt-5">
+        <div class="container">
+            <div class="row">
+                <!-- left section -->
+                <div class="col-md-6 mb-4">
+                    <h2><span class="accent">Transitfy</span></h2>
+                    <p class="small">
+                        Transitfy is a Smart Mobility & Traffic Management Portal designed to improve urban transportation,
+                        reduce traffic congestion, and promote safer, smarter, and more sustainable mobility systems.
+                    </p>
+                    <h5 class="mt-4">Stay Updated</h5>
+                    <form>
+                        <div class="input-group mt-2">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+
+                            <button type="reset" class="btn">
+                                <i class="bi bi-send-fill"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- right section -->
+                <div class="col-md-6 border-start ps-4">
+                    <div class="row small">
+                        <div class="col-md-4 mb-3">
+                            <h6 class="border-bottom pb-1">Pages</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-chevron-right"></i> <a href="index.html" style="text-decoration: none; color: white;">Home</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="aboutus.html" style="text-decoration: none; color: white;">About Us</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="act_now.html" style="text-decoration: none; color: white;">Take Action</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="https://www.canva.com/design/DAHKffhsYi8/CIiL7inv6dd82UL4MmbrsA/edit" target="_blank" style="text-decoration: none; color: white;">Credit</a></li>
+                            </ul>
+                        </div>
+
+                      
+                        <div class="col-md-4 mb-3">
+                            <h6 class="border-bottom pb-1">Members</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-person"></i> Yay Chan Maung</li>
+                                <li><i class="bi bi-person"></i> Kyi Phyu Phyo Thant</li>
+                                <li><i class="bi bi-person"></i> Myat Noe Thadar</li>
+                                <li><i class="bi bi-person"></i> Sai Kyaut Zet Hin Hseng</li>
+                            </ul>
+                        </div>
+
+
+                        <div class="col-md-4 mb-3">
+                            <h6 class="border-bottom pb-1">Contact</h6>
+                            <p><i class="bi bi-geo-alt-fill accent"></i> Yangon, Myanmar</p>
+                            <p><i class="bi bi-telephone-fill accent"></i> +959 78934240</p>
+                            <p><i class="bi bi-envelope-fill accent"></i> transitfy.portal@gmail.com</p>
+
+                            <div class="icon-hover mt-2">
+                                <i class="bi bi-facebook me-2"></i>
+                                <i class="bi bi-youtube me-2"></i>
+                                <i class="bi bi-instagram me-2"></i>
+                                <i class="bi bi-twitter-x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4 py-3 footer-bottom">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start small">
+                <span class="mb-2 mb-md-0">©2026 Transitfy. All rights reserved.</span>
+                <div class="d-flex gap-3">
+                    <span>Privacy Policy</span>
+                    <span>Terms of Service</span>
+                    <span>Cookies</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+ 
+<!-- Bootstrip CDN JS Link -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<!-- AOS JS Link --service
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Initiate AOS -->
+<script>AOS.init();</script>
+
+</body>
+</html>

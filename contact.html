@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitfy | Contact Us</title>
+    <!--Bootstrap CDN CSS Links-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">   
+    <!--Bootstrap Icon CDN Links-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- AOS CSS Link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="image/favicon.png">
+    
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Times, serif; 
+        }
+
+        
+        /* navbar start */
+        .navbar{
+            background-color: #e67423db;
+            backdrop-filter: blur(8px);
+            padding: 10px 45px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+        }
+
+        .logo{
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .navbar-brand{
+            color: white;
+            font-size: 20px;
+            margin-left: 20px;
+        }
+
+        .navbar-brand:hover{
+            color: white;
+        }
+
+        .middle-links{
+            margin-left: 220px;
+        }
+
+        .nav-link{
+            color: white;
+            font-size: 18px;
+            margin: 0 22px;
+        }
+
+        .nav-link:hover{
+            color: #e9dbd4;
+            transition: 0.3s;
+            border-bottom: 2px solid #ebd9cbc7;
+        }
+        .navbar .nav-link.active {
+            border-bottom: 2px solid #ebd9cbc7;
+            color: #e9dbd4;
+        }
+        .dropdown-menu .dropdown-item.active {
+            border-bottom: 2px solid #ebd9cbc7;
+            color: #e9dbd4;
+            background-color: #e67423db;
+        }
+        .dropdown-menu .dropdown-item:hover{
+            color: #e37738c7;
+            transition: 0.3s;
+            border-bottom: 2px solid #ebd9cbc7;
+        }
+
+
+        /* toggler */
+        .navbar-toggler{
+            border: none;
+        }
+
+        .navbar-toggler:focus{
+            box-shadow: none;
+        }
+
+        .navbar-toggler i{
+            color: white;
+            font-size: 28px;
+        }
+        /* toggler end */
+
+        /* offcanvas */
+        .offcanvas{
+            background-color: white;
+        }
+
+        .offcanvas-title{
+            color: white;
+        }
+
+        .btn-close{
+            filter: brightness(0) invert(1);
+        }
+
+        .offcanvas .nav-link{
+            color: rgb(0, 0, 0);
+            margin: 10px 20px;
+        }
+
+        .offcanvas .nav-link:hover{
+            color: #ff8c00;
+        }
+        /* navbar end */
+
+        /* reviews start */
+        #reviews{
+            padding:100px 0;
+            background: linear-gradient(135deg, #fffcf5 0%, #ffe8d1 100%)
+        }
+
+        .review-card{
+            background:white;
+            border-radius:24px;
+            padding:40px 35px;
+            position:relative;
+            overflow:hidden;
+            height:100%;
+            transition:0.4s;
+            border:1px solid #f1f1f1;
+        }
+
+        .review-card:hover{
+            transform:translateY(-8px);
+            box-shadow:0 12px 30px rgba(230,116,35,0.12);
+        }
+
+        .review-top{
+            width:70px;
+            height:6px;
+            background:#000000db;
+            border-radius:20px;
+            margin-bottom:25px;
+        }
+
+        .review-card h4{
+            font-weight:700;
+            margin-bottom:18px;
+            color:#222;
+        }
+
+        .review-card p{
+            color:#666;
+            line-height:1.9;
+            font-size:15px;
+        }
+        .section-title{
+            text-align:center;
+            margin-bottom:50px;
+        }
+        /* reviews end */
+
+        /* contact us start*/
+            .contact-container {
+            background: linear-gradient(135deg, #fffcf5 0%, #ffe8d1 100%);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.5); 
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .call-section {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            color: #444;
+        }
+
+        .call-section i {
+            color: #ff8c00;
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+
+        .form-label {
+            color: #555;
+            font-weight: 500;
+        }
+
+        .btn-orange {
+            background-color: #ff8c00; 
+            color: white;
+            padding: 10px 30px;
+            border-radius: 12px;
+            border: none;
+            font-weight: bold;
+        }
+
+        .btn-orange:hover {
+            background-color: #c95f15; 
+            color: white;
+        }
+
+        .contact-container .form-control {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+
+        /* Styling for Social Media Icons on the left */
+        .social-media {
+            margin-top: 40px;
+        }
+
+        .social-media a {
+            color: #ff8c00;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-media a:hover {
+            color: #e67e00;
+            opacity: 0.8;
+        }
+        /* contact us end */
+
+/* footer start */
+        footer {
+            background-color: #e67423db;
+            color: #ffffff;
+            font-family: "Times New Roman", serif;
+        }
+
+        .accent {
+            color: #f6f6f6;
+        }
+
+        footer p,
+        footer li,
+        footer span {
+            color: #ffffff;
+        }
+
+        footer h2,
+        footer h6 {
+            color: #ffffff;
+        }
+
+        .input-group input {
+            border: none;
+        }
+
+        .input-group button {
+            background-color: #e4650adb;
+            border: none;
+            color: white;
+        }
+
+        .input-group button:hover {
+            background-color: #ff9f43;
+        }
+
+        .border-start {
+            border-color: rgba(255, 255, 255, 0.2) !important;
+        }
+
+        .icon-hover i {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .icon-hover i:hover {
+            color: #ff9f43;
+        }
+
+        .footer-bottom {
+            background-color: #f4f4f4;
+        }
+
+        .footer-bottom span {
+            color: #e67423db;
+        }
+        /* footer end */
+  </style>
+</head>
+<body>
+    <!-- navbar start -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand d-flex align-items-center" style="color: white;"><img src="image/logo.jpg" class="logo me-2">Transitfy</a>
+
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_nav"> <i class="bi bi-list"></i></button>
+
+            <div class="collapse navbar-collapse d-none d-lg-flex">
+                <ul class="navbar-nav middle-links">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">Our Team</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="aboutus.html" class="dropdown-item p-2 ps-3">About Us</a></li>
+                            <li><a href="contact.html" class="dropdown-item active p-2 ps-3">Contact Us</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="Benefits.html">Benefits</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="smart_transport.html" class="dropdown-item">Smart Transport</a></li>
+                            <li><a href="roadsafety.html" class="dropdown-item">Road Safety</a></li>
+                            <li><a href="tracking_routes.html" class="dropdown-item">Route Tracking</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="act_now.html">Act Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- offcanvas -->
+    <div class="offcanvas offcanvas-start" id="offcanvas_nav">
+        <div class="offcanvas-header mt-5">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">Our Team</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="aboutus.html" class="dropdown-item">About Us</a></li>
+                        <li><a href="contact.html" class="dropdown-item active">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="Benefits.html">Benefits</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="smart_transport.html" class="dropdown-item">Smart Transport</a></li>
+                        <li><a href="roadsafety.html" class="dropdown-item">Road Safety</a></li>
+                        <li><a href="tracking_routes.html" class="dropdown-item">Route Tracking</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="act_now.html">Act Now</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- navbar end -->
+
+    <!-- Review start -->
+     <section id="reviews">
+        <div class="container mt-4">
+            <div class="section-title">
+                <h1 style="color: #ff8c00;"><b>Honest Feedbacks</b></h1>
+                <p>Feedback and reviews from users who explored our website.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="review-card">
+                        <div class="review-top"></div>
+                        <h4>Aye Aye</h4>
+                        <p>“The website was very easy to navigate and helped me understand smart transportation solutions more clearly.”</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="review-card">
+                        <div class="review-top"></div>
+                        <h4>Ma Phyu</h4>
+                        <p>“I liked the clean design and organized information. The website explained the project in a simple and professional way.”</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="review-card">
+                        <div class="review-top"></div>
+                        <h4>Ko Myat</h4>
+                        <p>“The website presented the project effectively with a modern layout, making the content engaging and easy to understand.”</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- Review end -->
+
+      <!-- contact us start -->
+     <div class="contact-container mx-auto my-5">
+        <div class="header-logo"></div>
+
+        <div class="row">
+            <!-- Left Side -->
+            <div class="col-md-5 d-flex flex-column justify-content-between">
+                <div>
+                    <h1>Contact us</h1>
+                    
+                    <div class="call-section">
+                        <p class="mb-1"><strong>Get in touch</strong></p>
+                        <p class="mb-1"><i class="bi bi-geo-alt-fill"></i> Yangon, Myanmar</p>
+                        <p class="mb-1"><i class="bi bi-telephone-fill"></i> +959 78934240</p>
+                        <p class="mb-1"><i class="bi bi-envelope-fill"></i> transitfy.portal@gmail.com</p>    
+                    </div>
+                </div>
+
+                <!-- Social Media Section (Aligned Left) -->
+                <div class="social-media">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-youtube"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-twitter-x"></i></a>
+                </div>
+            </div>
+
+            <!-- Right Side (The Form) -->
+            <div class="col-md-7">
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Your Email Address</label>
+                        <input type="email" class="form-control" id="email" placeholder="example@gmail.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="How can we help?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-orange">Send message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- contact us end -->
+
+    <!-- footer start -->
+    <footer class="pt-5">
+        <div class="container">
+            <div class="row">
+                <!-- left section -->
+                <div class="col-md-6 mb-4">
+                    <h2><span class="accent">Transitfy</span></h2>
+                    <p class="small">
+                        Transitfy is a Smart Mobility & Traffic Management Portal designed to improve urban transportation,
+                        reduce traffic congestion, and promote safer, smarter, and more sustainable mobility systems.
+                    </p>
+                    <h5 class="mt-4">Stay Updated</h5>
+                    <form>
+                        <div class="input-group mt-2">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+
+                            <button type="reset" class="btn">
+                                <i class="bi bi-send-fill"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- right section -->
+                <div class="col-md-6 border-start ps-4">
+                    <div class="row small">
+                        <div class="col-md-4 mb-3">
+                            <h6 class="border-bottom pb-1">Pages</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-chevron-right"></i> <a href="index.html" style="text-decoration: none; color: white;">Home</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="aboutus.html" style="text-decoration: none; color: white;">About Us</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="act_now.html" style="text-decoration: none; color: white;">Take Action</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="https://www.canva.com/design/DAHKffhsYi8/CIiL7inv6dd82UL4MmbrsA/edit" target="_blank" style="text-decoration: none; color: white;">Credit</a></li>
+                            </ul>
+                        </div>
+
+                      
+                        <div class="col-md-4 mb-3">
+                            <h6 class="border-bottom pb-1">Members</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-person"></i> Yay Chan Maung</li>
+                                <li><i class="bi bi-person"></i> Kyi Phyu Phyo Thant</li>
+                                <li><i class="bi bi-person"></i> Myat Noe Thadar</li>
+                                <li><i class="bi bi-person"></i> Sai Kyaut Zet Hin Hseng</li>
+                            </ul>
+                        </div>
+
+
+                        <div class="col-md-4 mb-3">
+                            <h6 class="border-bottom pb-1">Contact</h6>
+                            <p><i class="bi bi-geo-alt-fill accent"></i> Yangon, Myanmar</p>
+                            <p><i class="bi bi-telephone-fill accent"></i> +959 78934240</p>
+                            <p><i class="bi bi-envelope-fill accent"></i> transitfy.portal@gmail.com</p>
+
+                            <div class="icon-hover mt-2">
+                                <i class="bi bi-facebook me-2"></i>
+                                <i class="bi bi-youtube me-2"></i>
+                                <i class="bi bi-instagram me-2"></i>
+                                <i class="bi bi-twitter-x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4 py-3 footer-bottom">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start small">
+                <span class="mb-2 mb-md-0">©2026 Transitfy. All rights reserved.</span>
+                <div class="d-flex gap-3">
+                    <span>Privacy Policy</span>
+                    <span>Terms of Service</span>
+                    <span>Cookies</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+<!-- Bootstrap JS link -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<!-- AOS JS Link -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Initiate AOS -->
+<script>AOS.init();</script>
+</body>
+</html>

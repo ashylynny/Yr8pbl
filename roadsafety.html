@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transitfy | Road Safety</title>
+
+  <!-- Bootstrap CDN CSS Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Bootstrap CDN Icon Links -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- AOS CSS LInk -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="image/favicon.png">
+
+  <style>
+    body{
+            margin: 0;
+            padding: 0;
+            font-family: Times, serif;   
+        }
+        /* navbar start */
+        .navbar{
+            background-color: #e67423db;
+            backdrop-filter: blur(8px);
+            padding: 10px 45px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+        }
+
+        .logo{
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .navbar-brand{
+            color: white;
+            font-size: 20px;
+            margin-left: 20px;
+        }
+
+        .navbar-brand:hover{
+            color: white;
+        }
+
+        .middle-links{
+            margin-left: 220px;
+        }
+
+        .nav-link{
+            color: white;
+            font-size: 18px;
+            margin: 0 22px;
+        }
+
+        .nav-link:hover{
+            color: #e9dbd4;
+            transition: 0.3s;
+            border-bottom: 2px solid #ebd9cbc7;
+        }
+        .navbar .nav-link.active {
+            border-bottom: 2px solid #ebd9cbc7;
+            color: #e9dbd4;
+        }
+        .dropdown-menu .dropdown-item.active {
+            border-bottom: 2px solid #ebd9cbc7;
+            color: #e9dbd4;
+            background-color: #e67423db;
+        }
+        .dropdown-menu .dropdown-item:hover{
+            color: #e37738c7;
+            transition: 0.3s;
+            border-bottom: 2px solid #ebd9cbc7;
+        }
+
+
+        /* toggler */
+        .navbar-toggler{
+            border: none;
+        }
+
+        .navbar-toggler:focus{
+            box-shadow: none;
+        }
+
+        .navbar-toggler i{
+            color: white;
+            font-size: 28px;
+        }
+        /* toggler end */
+
+        /* offcanvas */
+        .offcanvas{
+            background-color: white;
+        }
+
+        .offcanvas-title{
+            color: white;
+        }
+
+        .btn-close{
+            filter: brightness(0) invert(1);
+        }
+
+        .offcanvas .nav-link{
+            color: rgb(0, 0, 0);
+            margin: 10px 20px;
+        }
+
+        .offcanvas .nav-link:hover{
+            color: #ff8c00;
+        }
+        /* navbar end */
+
+   .box {
+            width:38px;
+            height:38px;
+            border-radius: 12px;
+            background-color: #ff8c00;
+        }
+        .box .bi {
+            color:white;
+            font-size: 25px;
+        }
+        .country-img{
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .country-img img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* hidden content */
+        .card-hidden-content{
+            position:absolute;
+            bottom:-10px;
+            color:white;
+            display: none;
+        }
+
+        /* hover effects */
+        .country-img:hover {
+            transform:translateY(-8px);
+            transition:0.3s;
+        }
+        .country-img:hover .card-hidden-content{
+            display: block;
+            background:rgba(0, 0, 0, 0.49);
+            width: 100%;
+            padding-left: 20px;
+            transform:translateY(-8px);
+            transition:0.3s;
+        }
+
+    .bottom-section {
+      background: linear-gradient(135deg, #fffcf5 0%, #ffe8d1 100%);
+      color: rgb(0, 0, 0);
+      padding: 30px;
+      margin-top: 40px;
+      border-radius: 10px;
+    }
+
+    /* third container start */
+    .smart-box{
+      border: 3px solid #000000db;
+      padding: 50px;
+      position: relative;
+      background: transparent;
+      font-size: 20px;
+      padding-left: 13%;
+      border-radius: 12px;
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+
+    .smart-box h2{
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .smart-box ul{
+      padding-left: 20px;
+    }
+
+    .smart-box li{
+        margin-bottom: 20px;
+    }
+
+    .circle-img-1 {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 3px solid #000000db;
+      object-fit: cover;
+
+      position: absolute;
+      top: -40px;
+      left: -60px;
+
+      background: white;
+    }
+    .circle-img-2 {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 3px solid #000000db;
+      object-fit: cover;
+
+      position: absolute;
+      top: 100px;
+      left: -60px;
+
+      background: white;
+    }
+    .circle-img-3 {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 3px solid #000000db;
+      object-fit: cover;
+
+      position: absolute;
+      bottom: -30px;
+      left: -60px;
+
+      background: white;
+    }
+
+
+    @media (max-width: 991px){
+      .smart-box {
+        padding-top: 150px;
+      }
+      .circle-img-1 {
+        display: none;
+      }
+      .circle-img-2 {
+        display: none;
+      }
+      .circle-img-3 {
+        display: none;
+    }
+    .smart-box h2 {
+      margin-top: -100px;
+    }
+}
+    /* third container end */
+
+/* footer start */
+        footer {
+            background-color: #e67423db;
+            color: #ffffff;
+            font-family: "Times New Roman", serif;
+        }
+
+        .accent {
+            color: #f6f6f6;
+        }
+
+        footer p,
+        footer li,
+        footer span {
+            color: #ffffff;
+        }
+
+        footer h2,
+        footer h6 {
+            color: #ffffff;
+        }
+
+        .input-group input {
+            border: none;
+        }
+
+        .input-group button {
+            background-color: #e4650adb;
+            border: none;
+            color: white;
+        }
+
+        .input-group button:hover {
+            background-color: #ff9f43;
+        }
+
+        .border-start {
+            border-color: rgba(255, 255, 255, 0.2) !important;
+        }
+
+        .icon-hover i {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .icon-hover i:hover {
+            color: #ff9f43;
+        }
+
+        .footer-bottom {
+            background-color: #f4f4f4;
+        }
+
+        .footer-bottom span {
+            color: #e67423db;
+        }
+        /* footer end */
+  </style>
+</head>
+
+<body>
+  <!-- navbar start -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand d-flex align-items-center" style="color: white;"><img src="image/logo.jpg" class="logo me-2">Transitfy</a>
+
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_nav"> <i class="bi bi-list"></i></button>
+
+            <div class="collapse navbar-collapse d-none d-lg-flex">
+                <ul class="navbar-nav middle-links">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Team</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="aboutus.html" class="dropdown-item p-2 ps-3">About Us</a></li>
+                            <li><a href="contact.html" class="dropdown-item p-2 ps-3">Contact Us</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="Benefits.html">Benefits</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="smart_transport.html" class="dropdown-item">Smart Transport</a></li>
+                            <li><a href="roadsafety.html" class="dropdown-item active">Road Safety</a></li>
+                            <li><a href="tracking_routes.html" class="dropdown-item">Route Tracking</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="act_now.html">Act Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- offcanvas -->
+    <div class="offcanvas offcanvas-start" id="offcanvas_nav">
+        <div class="offcanvas-header mt-5">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Team</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="aboutus.html" class="dropdown-item">About Us</a></li>
+                        <li><a href="contact.html" class="dropdown-item">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="Benefits.html">Benefits</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="smart_transport.html" class="dropdown-item">Smart Transport</a></li>
+                        <li><a href="roadsafety.html" class="dropdown-item active">Road Safety</a></li>
+                        <li><a href="tracking_routes.html" class="dropdown-item">Route Tracking</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="act_now.html">Act Now</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- navbar end -->
+
+  <!-- COUNTRY CARDS -->
+  <div class="container" style="font-size: 20px; margin-top: 120px;">
+    <div class="row g-4">
+
+      <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-6 pe-5 mb-3">
+                <h2 style="color: #ff8c00;"><b>Road Safety All Around The World</b></h2>
+                <p>Yangon is getting more polluted day by day and its transportation system is one of the factors. Not only that but the transport system is currently inefficient with not enough cycling lanes or walking spaces. Here are the solutions from other countries so Myanmar can cope the issues.</p>
+                <div class="container px-0">
+                <div class="row g-3">
+
+                    <div class="col-6">
+                        <div class="country-img">
+                            <img src="image/denmark.jpg" alt="denmark">
+                            <div class="card-hidden-content">
+                            <p style="font-size: 25px;">Denmark</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="country-img">
+                            <img src="image/netherlands.jpg" alt="netherlands">
+                            <div class="card-hidden-content">
+                            <p style="font-size: 25px;">Netherlands</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="country-img">
+                            <img src="image/japan.jpg" alt="japan">
+                            <div class="card-hidden-content">
+                            <p style="font-size: 25px;">Japan</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="country-img">
+                            <img src="image/singapore.jpg" alt="singapore">
+                            <div class="card-hidden-content">
+                            <p style="font-size: 25px;">Singapopore</p>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="box d-flex justify-content-center align-items-center mb-3">
+                            <i class="bi bi-bicycle"></i>
+                        </div>
+                        <h3 style="color: #ff8c00;"><b>Denmark</b></h3>
+                        <p>Cycling-friendly cities like Copenhagen.</p>
+                        <div class="stats">
+                        <ul>
+                            <li>Around 19% bike usage</li>
+                            <li>Smart traffic lights for cyclists</li>
+                        </ul>
+                        </div>
+                     
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="box d-flex justify-content-center align-items-center mb-3">
+                            <i class="bi bi-cone-striped"></i>
+                        </div>
+                        <h3 style="color: #ff8c00;"><b>Netherlands</b></h3>
+                        <p>Leader in cycling infrastructure and safety.</p>
+                        <div class="stats">
+                        <ul>
+                            <li>27% of trips by bicycle</li>
+                            <li>Over 35,000 km of bike lanes</li>
+                        </ul>
+                        </div>
+                       
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <div class="box d-flex justify-content-center align-items-center mb-3">
+                            <i class="bi bi-file-earmark-ruled-fill"></i>
+                        </div>
+                        <h3 style="color: #ff8c00;"><b>Japan</b></h3>
+                        <p>Advanced trains and strict safety culture.</p>
+                        <div class="stats">
+                        <ul>
+                            <li>Millions use trains daily</li>
+                            <li>Extremely low accident rates</li>
+                        </ul>
+                        </div>
+                       
+                       
+                    </div>
+                      <div class="col-md-6 mt-3">
+                        <div class="box d-flex justify-content-center align-items-center mb-3">
+                           <i class="bi bi-bus-front-fill"></i>
+                        </div>
+                        <h3 style="color: #ff8c00;"><b>Singapore</b></h3>
+                        <p>Highly organised and safe transport system.</p>
+                        <div class="stats">
+                        <ul>
+                            <li>Very low road death rate</li>
+                            <li>Strong public transport network</li>
+                        </ul>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- MYANMAR SECTION -->
+    <div class="bottom-section my-5">
+      <h3 style="color: #ff8c00;"><b>How will these help Myanmar?</b></h3>
+      <p style="font-size: 20px;">
+        Myanmar can improve road safety by building more cycle lanes, improving public transport,
+        and introducing smarter traffic systems. Using ideas from countries like the Netherlands
+        and Singapore can reduce accidents and make cities cleaner and easier to travel in.
+      </p>
+    </div>
+
+
+  </div>
+
+  <!-- Myanmar's issues -->
+     <div class="container my-5">
+
+    <div class="smart-box">
+
+      <img src="image/pavement.jpg" alt="road"class="circle-img-1">
+      <img src="image/intersection.jpg" alt="road"class="circle-img-2">
+      <img src="image/traffic.jpg" alt="road"class="circle-img-3">
+
+      <h2 style="color: #ff8c00;"><b>Current road safety related issues in Myanmar</b></h2>
+
+      <ul>
+        <li><b style="color: #ff8c00;">Hazardous pedestrian condition</b> lead to frequent accidents amoung citizens when walking on pavements in the city. There's a need for well-maintaince, safety and functionally structured layouts among sidewalks.</li>
+        <li><b style="color: #ff8c00;">Poor traffic management and intersections</b> causes confusion due to its diagonal and disorganized changes. Traffic lights are set at weird angles and postions which often causes misunderstandings. Sometimes, traffic lights won't even function due to unpredictable electricity.</li>
+        <li><b style="color: #ff8c00;">Not enough cycling infrastructure</b> affects the safety of cyclists or daily delivery services by forcing them to take the same routes as cars on main roads. Without well-designed cycling spaces, many incidents can accure. </li>
+      </ul>
+
+    </div>
+
+  </div> 
+<!-- footer start -->
+    <footer class="pt-5">
+        <div class="container">
+            <div class="row">
+                <!-- left section -->
+                <div class="col-md-6 mb-4">
+                    <h2><span class="accent">Transitfy</span></h2>
+                    <p class="small">
+                        Transitfy is a Smart Mobility & Traffic Management Portal designed to improve urban transportation,
+                        reduce traffic congestion, and promote safer, smarter, and more sustainable mobility systems.
+                    </p>
+                    <h5 class="mt-4">Stay Updated</h5>
+                    <form>
+                        <div class="input-group mt-2">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+
+                            <button type="reset" class="btn">
+                                <i class="bi bi-send-fill"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- right section -->
+                <div class="col-md-6 border-start ps-4">
+                    <div class="row small">
+                        <div class="col-md-4 mb-3">
+                            <h6 class="border-bottom pb-1">Pages</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-chevron-right"></i> <a href="index.html" style="text-decoration: none; color: white;">Home</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="aboutus.html" style="text-decoration: none; color: white;">About Us</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="act_now.html" style="text-decoration: none; color: white;">Take Action</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="https://www.canva.com/design/DAHKffhsYi8/CIiL7inv6dd82UL4MmbrsA/edit" target="_blank" style="text-decoration: none; color: white;">Credit</a></li>
+                            </ul>
+                        </div>
+
+                      
+                        <div class="col-md-4 mb-3">
+                            <h6 class="border-bottom pb-1">Members</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-person"></i> Yay Chan Maung</li>
+                                <li><i class="bi bi-person"></i> Kyi Phyu Phyo Thant</li>
+                                <li><i class="bi bi-person"></i> Myat Noe Thadar</li>
+                                <li><i class="bi bi-person"></i> Sai Kyaut Zet Hin Hseng</li>
+                            </ul>
+                        </div>
+
+
+                        <div class="col-md-4 mb-3">
+                            <h6 class="border-bottom pb-1">Contact</h6>
+                            <p><i class="bi bi-geo-alt-fill accent"></i> Yangon, Myanmar</p>
+                            <p><i class="bi bi-telephone-fill accent"></i> +959 78934240</p>
+                            <p><i class="bi bi-envelope-fill accent"></i> transitfy.portal@gmail.com</p>
+
+                            <div class="icon-hover mt-2">
+                                <i class="bi bi-facebook me-2"></i>
+                                <i class="bi bi-youtube me-2"></i>
+                                <i class="bi bi-instagram me-2"></i>
+                                <i class="bi bi-twitter-x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4 py-3 footer-bottom">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start small">
+                <span class="mb-2 mb-md-0">©2026 Transitfy. All rights reserved.</span>
+                <div class="d-flex gap-3">
+                    <span>Privacy Policy</span>
+                    <span>Terms of Service</span>
+                    <span>Cookies</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- Bootstrip CDN JS Link -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<!-- AOS JS Link -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Initiate AOS -->
+<script>AOS.init();</script>
+</body>
+</html>

@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitfy | Home</title>
+     <!-- Bootstrap CDN CSS Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Bootstrap CDN Icon Links -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- AOS CSS LInk -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="image/favicon.png">
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Times, serif; 
+        }
+
+        
+        /* navbar start */
+        .navbar{
+            background-color: #e67423db;
+            backdrop-filter: blur(8px);
+            padding: 10px 45px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+        }
+
+        .logo{
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .navbar-brand{
+            color: white;
+            font-size: 20px;
+            margin-left: 20px;
+        }
+
+        .navbar-brand:hover{
+            color: white;
+        }
+
+        .middle-links{
+            margin-left: 220px;
+        }
+
+        .nav-link{
+            color: white;
+            font-size: 18px;
+            margin: 0 22px;
+        }
+
+        .nav-link:hover{
+            color: #e9dbd4;
+            transition: 0.3s;
+            border-bottom: 2px solid #ebd9cbc7;
+        }
+        .navbar .nav-link.active {
+            border-bottom: 2px solid #ebd9cbc7;
+            color: #e9dbd4;
+        }
+        .dropdown-menu .dropdown-item.active {
+            border-bottom: 2px solid #ebd9cbc7;
+            color: #e9dbd4;
+            background-color: #e67423db;
+        }
+        .dropdown-menu .dropdown-item:hover{
+            color: #e37738c7;
+            transition: 0.3s;
+            border-bottom: 2px solid #ebd9cbc7;
+        }
+
+
+        /* toggler */
+        .navbar-toggler{
+            border: none;
+        }
+
+        .navbar-toggler:focus{
+            box-shadow: none;
+        }
+
+        .navbar-toggler i{
+            color: white;
+            font-size: 28px;
+        }
+        /* toggler end */
+
+        /* offcanvas */
+        .offcanvas{
+            background-color: white;
+        }
+
+        .offcanvas-title{
+            color: white;
+        }
+
+        .btn-close{
+            filter: brightness(0) invert(1);
+        }
+
+        .offcanvas .nav-link{
+            color: rgb(0, 0, 0);
+            margin: 10px 20px;
+        }
+
+        .offcanvas .nav-link:hover{
+            color: #ff8c00;
+        }
+        /* navbar end */
+
+        .carousel-description {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        bottom: auto;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        padding: 15%;
+        }
+    
+        .intro-buttons {
+            width: 200px;
+            background-color: #ff8c00; 
+            color: white;
+            padding: 10px 30px;
+            border-radius: 12px;
+            border: none;
+            font-weight: bold;
+        }
+        .intro-buttons:hover {
+            color: white;
+            background-color: #c95f15; 
+        }
+        .button-box {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .carousel img {
+            object-fit: cover;
+        }
+        /* Card CSS */
+        .card{
+            position:relative;
+            overflow:hidden;
+            border-radius:15px;
+            border-width: 2px;
+            border-color: rgb(255, 255, 255);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.299);
+            transition:0.4s;
+        }
+
+        .card img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            display:block;
+            transition:0.3s;
+        }
+
+        .overlay{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(0, 0, 0, 0.284);
+        }
+        .overlay h3 {
+            color: white;
+            padding: 20px;
+
+        }
+
+        /* hidden content */
+        .card-hidden-content{
+            position:absolute;
+            bottom:-120px;
+            left:20px;
+            color:white;
+            transition:0.3s;
+        }
+
+        /* hover effects */
+        .card:hover .overlay{
+            background:rgba(0,0,0,0.5);
+        }
+        .card:hover {
+            transform:translateY(-8px);
+        }
+        .card:hover .card-hidden-content{
+            bottom:20px;
+            left: 20px;
+            right: 10px;
+        }
+        /* EV container */
+        .ev-card {
+            background: linear-gradient(135deg, #fffcf5 0%, #ffe8d1 100%);
+            padding: 50px;
+        }
+        /* Air level */
+        .ygn-card {
+        background: white;
+        border: 1px solid #666;
+        border-radius: 25px;
+        padding: 25px;
+        height: 100%;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.299);
+        }
+        .ygn-img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 18px;
+        margin-bottom: 25px;
+        }
+        .city-name {
+        font-weight: bold;
+        margin-bottom: 8px;
+        }
+        .ygn-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+        .air-button {
+            width: 150px;
+            height: 50px;
+            font-size: large;
+            border-radius: 12px;
+            margin-top: 10px;
+            color: white;
+            font-weight: bold;
+            background-color: #ff8c00;
+        }
+        .air-button:hover {
+        color: white;
+        background-color: #c95f15;
+        }
+
+        .more {
+        display: inline-block;
+        margin-top: 35px;
+        color: black;
+        text-decoration: none;
+        font-size: 1rem;
+        }
+        .scrollable {
+        height: 500px;
+        overflow-y: auto;
+        padding-right: 10px;
+        }
+        .others {
+        background: white;
+        border: 1px solid #666;
+        border-radius: 22px;
+        padding: 25px;
+        margin-bottom: 25px;
+        margin-right: 5px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.299);
+        }
+
+        .others-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+        /* AQI */
+        .aqi-card{
+            border-radius:20px;
+            border-width: 2px;
+            border-style: solid;
+            border-color: black;
+            padding:25px;
+            position:relative;
+            overflow:hidden;
+            height:100%;
+            transition:0.1s;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.299);
+            
+        }
+
+        .aqi-card:hover{
+            transform:translateY(-3px);
+        }
+
+        .icon-box{
+            width:90px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .icon-box i{
+            font-size:58px;
+        }
+
+        .aqi-content{
+            font-size:22px;
+        }
+        /* Modal */
+        .back-btn {
+            color: white;
+            background-color: #ff8c00;
+        }
+        .back-btn:hover {
+            color: white;
+            background-color: #c95f15;
+        }
+        .graph img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* cause & consequences start */
+        .hero{
+            text-align:center;
+            padding:60px 20px;
+        }
+
+        .hero h1{
+            color:#ff8c00;
+            font-weight:bold;
+        }
+
+        .hero p{
+            max-width:800px;
+            margin: auto;
+            color:#ff8c00;
+        }
+
+        .section-card{
+            background:white;
+            border-radius:15px;
+            padding:25px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+            height:450px;
+        }
+
+        .badge-title{
+            background:#ff8c00;
+            color:white;
+            padding:5px 12px;
+            border-radius:20px;
+            font-size:14px;
+        }
+
+        .section-title{
+            color:#ff8c00;
+            font-weight:bold;
+            margin-top:15px;
+        }
+
+        .list li{
+            margin-bottom:8px;
+        }
+        /* causes and consequences end */
+
+        /* smart city connection start */
+        .main-box{
+            background: #ffffff;
+            border-radius: 25px;
+            padding: 60px 50px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.299);
+            border: 2px solid #dee2e6;
+        }
+
+        .city-tag{
+            display: inline-block;
+            background: #ff8c00;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 20px;
+        }
+
+        .title{
+            font-size: 36px;
+            font-weight: 700;
+            margin-top: 20px;
+            line-height: 1.4;
+            color: #212529;
+        }
+
+        .highlight{
+            color: #ff8c00;
+        }
+
+        .description{
+            font-size: 20px;
+            color: #495057;
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        .smart-list{
+            margin-top: 40px;
+            padding-left: 0;
+        }
+
+        .smart-list li{
+            font-size: 20px;
+            margin-bottom: 18px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #343a40;
+            padding: 12px 15px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+            transition: 0.3s ease;
+        }
+
+        .smart-list li:hover{
+            transform: translateX(5px);
+            background: #ff8c000e;
+            border-color: #ff8c00;
+        }
+
+        .icon{
+            width: 45px;
+            height: 45px;
+            background: #ff8c00;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            flex-shrink: 0;
+            box-shadow: 0 5px 10px #58585832;
+        }
+
+        .bottom-box{
+            margin-top: 40px;
+            background: linear-gradient(135deg, #fff3e6, #fff);
+            border-radius: 18px;
+            padding: 30px;
+            border-left: 6px solid #ff8c00;
+        }
+
+        .bottom-box h4{
+            color: #ff8c00;
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .bottom-box p{
+            margin: 0;
+            color: #495057;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        /* Responsive */
+        @media(max-width:768px){
+
+            .main-box{
+                padding: 40px 25px;
+                text-align: center;
+            }
+
+            .title{
+                font-size: 28px;
+            }
+
+            .smart-list li{
+                flex-direction: column;
+                text-align: center;
+            }
+            .ev-card-title {
+                text-align: center;
+                margin: auto;
+            }
+        }
+        /* smart city connection end */
+
+        /* FAQ start */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        .main-wrapper{
+            padding:70px 0;
+        }
+
+        /* cards */
+        .main-card{
+            background:white;
+            border-radius:35px;
+            padding:60px;
+            box-shadow:0 15px 45px rgba(0,0,0,0.08);
+        }
+
+        .main-title{
+            font-size:54px;
+            font-weight:700;
+            color:#ff8c00;
+            margin-bottom:25px;
+            line-height:1.2;
+        }
+
+        .main-text{
+            font-size:20px;
+            line-height:1.9;
+            font-family:"Times New Roman", Times, serif;
+            color:#5b5b5b;
+        }
+
+        .hero-image{
+            width:100%;
+            height:450px;
+            object-fit:cover;
+            border-radius:28px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.12);
+            transition:0.4s;
+        }
+
+        /* FAQ */
+        .faq-box{
+            margin-top:55px;
+            background:white;
+            padding:10px 0;
+        }
+
+        .faq-heading{
+            font-size:40px;
+            font-weight:700;
+            color:#ff8c00;
+            padding:35px 40px 10px;
+        }
+
+        .faq-item{
+            border-bottom:1px solid #ededed;
+            padding:5px 35px;
+        }
+
+        .faq-btn{
+            width:100%;
+            border:none;
+            background:none;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:24px 0;
+            font-size:21px;
+            font-weight:600;
+            color:#444;
+            cursor:pointer;
+        }
+
+        .arrow{
+            font-size:18px;
+            transition:0.4s;
+        }
+
+        .faq-answer{
+            font-size:20px;
+            line-height:1.8;
+            font-family:"Times New Roman", Times, serif;
+            color:#5b5b5b;
+        }
+
+        /* benefits */
+        .section-title{
+            font-size:42px;
+            font-weight:700;
+            color:#ff8c00;
+            margin-top:40px;
+            text-align:center;
+        }
+
+        .section-text{
+            font-size:20px;
+            line-height:1.9;
+            font-family:"Times New Roman", Times, serif;
+            color:#5b5b5b;
+            text-align:center;
+            max-width:800px;
+            margin:0 auto 30px auto;
+        }
+
+        .benefit-box{
+            background:linear-gradient(to bottom right,#fff8ef,#fffdf9);
+            border:1px solid #ffe2b9;
+            border-radius:25px;
+            padding:32px;
+            transition: all 0.35s ease;
+            height:100%;
+            text-align:center;
+        }
+
+        .benefit-box:hover{
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            border-color:#ff8c00;
+        }
+
+        .benefit-icon{
+            font-size:42px;
+            color:#ff8c00;
+            margin-bottom:18px;
+        }
+
+        .benefit-box h5{
+            color:#444;
+            font-size:22px;
+            font-weight:700;
+            margin-bottom:12px;
+        }
+
+        .benefit-box p{
+            font-size:18px;
+            line-height:1.7;
+            font-family:"Times New Roman", Times, serif;
+            color:#555;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:992px){
+            .main-card{padding:40px;}
+            .main-title{font-size:42px;}
+            .hero-image{height:350px;}
+            .benefit-card{padding:40px;}
+        }
+
+        @media(max-width:768px){
+            .main-wrapper{padding:35px 0;}
+            .main-card{padding:30px;border-radius:25px;}
+            .main-title{font-size:34px;}
+            .hero-image{height:280px;}
+            .faq-heading{font-size:30px;padding:25px 25px 10px;}
+            .faq-item{padding:0 20px;}
+            .faq-btn{font-size:17px;}
+            .benefit-card{padding:30px;}
+        }
+        /* FAQ  end*/
+
+        /* footer start */
+        footer {
+            background-color: #e67423db;
+            color: #ffffff;
+            font-family: "Times New Roman", serif;
+        }
+
+        .accent {
+            color: #f6f6f6;
+        }
+
+        footer p,
+        footer li,
+        footer span {
+            color: #ffffff;
+        }
+
+        footer h2,
+        footer h6 {
+            color: #ffffff;
+        }
+
+        .input-group input {
+            border: none;
+        }
+
+        .input-group button {
+            background-color: #e4650adb;
+            border: none;
+            color: white;
+        }
+
+        .input-group button:hover {
+            background-color: #ff9f43;
+        }
+
+        .border-start {
+            border-color: rgba(255, 255, 255, 0.2) !important;
+        }
+
+        .icon-hover i {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .icon-hover i:hover {
+            color: #ff9f43;
+        }
+
+        .footer-bottom {
+            background-color: #f4f4f4;
+        }
+
+        .footer-bottom span {
+            color: #e67423db;
+        }
+        /* footer end */
+    </style>
+</head>
+<body>
+    <!-- navbar start -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand d-flex align-items-center" style="color: white;"><img src="image/logo.jpg" class="logo me-2">Transitfy</a>
+
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_nav"> <i class="bi bi-list"></i></button>
+
+            <div class="collapse navbar-collapse d-none d-lg-flex">
+                <ul class="navbar-nav middle-links">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Team</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="aboutus.html" class="dropdown-item p-2 ps-3">About Us</a></li>
+                            <li><a href="contact.html" class="dropdown-item p-2 ps-3">Contact Us</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="Benefits.html">Benefits</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="smart_transport.html" class="dropdown-item">Smart Transport</a></li>
+                            <li><a href="roadsafety.html" class="dropdown-item">Road Safety</a></li>
+                            <li><a href="tracking_routes.html" class="dropdown-item">Route Tracking</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="act_now.html">Act Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- offcanvas -->
+    <div class="offcanvas offcanvas-start" id="offcanvas_nav">
+        <div class="offcanvas-header mt-5">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Team</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="aboutus.html" class="dropdown-item">About Us</a></li>
+                        <li><a href="contact.html" class="dropdown-item">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="Benefits.html">Benefits</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="smart_transport.html" class="dropdown-item">Smart Transport</a></li>
+                        <li><a href="roadsafety.html" class="dropdown-item">Road Safety</a></li>
+                        <li><a href="tracking_routes.html" class="dropdown-item">Route Tracking</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="act_now.html">Act Now</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- navbar end -->
+
+    <!-- carousel start -->
+    <div id="carousel-id" class="carousel slide mt-3" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+            <button data-bs-target="#carousel-id" data-bs-slide-to="0" class="active"></button>
+            <button data-bs-target="#carousel-id" data-bs-slide-to="1"></button>
+            <button data-bs-target="#carousel-id" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img src="image/train.jpg" width="100%" height="600px">
+                <div class="carousel-caption carousel-description" style="background-color:rgba(0, 0, 0, 0.494); color:white;">
+                    <p class="carousel-title" style="font-size:60px;">Electrify your transport!</p>
+                    <p class="carousel paragraph" style="font-size:25px;">Contribute to improving Yangon’s air quality.</p>
+
+                    <div class="button-box d-flex flex-column flex-md-row">
+                        <a href="#air_quality"><button class="btn intro-buttons">Learn More</button></a>
+                        <a href="#ev_transport"><button class="btn intro-buttons">Start Now</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="image/bus.jpg" width="100%" height="600px">
+                <div class="carousel-caption carousel-description" style="background-color:rgba(0, 0, 0, 0.494); color:white;">
+                    <p style="font-size:60px;">Your choice matters!</p>
+                    <p style="font-size:25px;">Smarter transport is equivalent to cleaner Yangon.</p>
+                    <div class="button-box d-flex flex-column flex-md-row">
+                        <a href="#air_quality"><button class="btn intro-buttons">Learn More</button></a>
+                        <a href="#ev_transport"><button class="btn intro-buttons">Start Now</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="image/taxi.jpg" width="100%" height="600px">
+                <div class="carousel-caption carousel-description" style="background-color:rgba(0, 0, 0, 0.494); color:white;">
+                    <p style="font-size:60px;">Make room for clean air!</p>
+                    <p style="font-size:25px;">Every decision of yours counts for the future.</p>
+                    <div class="button-box d-flex flex-column flex-md-row">
+                        <a href="#air_quality"><button class="btn intro-buttons">Learn More</button></a>
+                        <a href="#ev_transport"><button class="btn intro-buttons">Start Now</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- carousel end -->
+
+    <!-- Causes & Consequences start -->
+    <div class="hero mx-5">
+        <h1>Causes & Consequences of Urban Traffic</h1>
+        <p style="color: black;">
+            Understanding why traffic problems happen and how they affect people, cities, and the environment
+            is the first step toward building smarter and more sustainable urban mobility systems.
+        </p>
+    </div>
+
+    <div class="container p-3">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="section-card"  style="background: linear-gradient(135deg, #fffcf5 0%, #ffe8d1 100%);">
+                    <span class="badge-title">Causes</span>
+                    <h3 class="section-title" style="text-align: left;">Why Traffic Problems Happen</h3>
+                    <ul class="list mt-3">
+                        <li>Heavy reliance on private vehicles</li>
+                        <li>Weak public transportation system</li>
+                        <li>No safe cycling lanes or walking paths</li>
+                        <li>Poor traffic signal coordination</li>
+                        <li>Rapid urban population growth</li>
+                        <li>Lack of smart traffic technology</li>
+                        <li>Road planning not matching city growth</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="section-card"  style="background: linear-gradient(135deg, #fffcf5 0%, #ffe8d1 100%);">
+                    <span class="badge-title">Consequences</span>
+                    <h3 class="section-title" style="text-align: left;">Impact on Society</h3>
+                    <ul class="list mt-3">
+                        <li>Air pollution from vehicle emissions</li>
+                        <li>Long travel times and congestion</li>
+                        <li>Increased stress and mental fatigue</li>
+                        <li>Respiratory health problems</li>
+                        <li>Economic losses due to delays</li>
+                        <li>Higher accident risks</li>
+                        <li>Climate change impact from carbon emissions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card mt-4"  style="background: linear-gradient(135deg, #fffcf5 0%, #ffe8d1 100%); height: fit-content;">
+            <span class="badge-title">Why It Matters</span>
+            <h3 class="section-title" style="text-align: left;">Building Smarter Cities</h3>
+            <p class="mt-3">
+                Traffic problems are not just about delays — they affect health, economy, safety, and the environment.
+                Smart mobility solutions such as improved public transport, smart traffic signals, and eco-friendly transport
+                systems can significantly improve urban life.
+            </p>
+        </div>
+    </div>
+    <!-- Causes & Consequences end -->
+
+    <!-- Air quality start -->
+    <div data-bs-spy="scroll" data-bs-target="#scroll_id">
+            <div class="container air-quality-container my-5" id="air_quality">
+                <!-- Air Quality Index -->
+                <div class="row my-5">
+                    <h1 class="my-4" style="color: #ff8c00;"><b>Air Quality Index</b></h1>
+                    <h5 class="mb-4" style="color: black;"><b>MUST KNOW:</b> EPA's tool for communicating about outdoor air quality and health. The AQI includes six color-coded categories, each corresponding to a range of index values. </h5>
+                    <div class="col-lg-4 col-md-6 my-2">
+                        <div class="aqi-card" style="color: rgba(33, 171, 14, 0.871); background-color: rgba(32, 171, 14, 0.063);">
+                            <div class="d-flex align-items-center">
+                            <div class="icon-box">
+                                <i class="bi bi-cloud-check"></i>
+                            </div>
+                            <div class="aqi-content">
+                                <h4>AQI: 0 - 50</h4>
+                                <h6>Good</h6>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 my-2">
+                        <div class="aqi-card" style="color: rgb(221, 193, 7); background-color: rgba(221, 193, 7, 0.1);">
+                            <div class="d-flex align-items-center">
+                            <div class="icon-box">
+                                <i class="bi bi-check-circle"></i>
+                            </div>
+                            <div class="aqi-content">
+                                <h4>AQI: 51 - 100</h4>
+                                <h6>Moderate</h6>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 my-2">
+                        <div class="aqi-card" style="color: rgb(231, 144, 14); background-color: rgba(231, 144, 14, 0.124);">
+                            <div class="d-flex align-items-center">
+                            <div class="icon-box">
+                                <i class="bi bi-shield-slash"></i>
+                            </div>
+                            <div class="aqi-content">
+                                <h4>AQI: 101 - 150</h4>
+                                <h6>Concern for vulnerable people</h6>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 my-2">
+                        <div class="aqi-card" style="color: rgba(228, 96, 114, 0.76); background-color: rgba(228, 96, 114, 0.063);">
+                            <div class="d-flex align-items-center">
+                            <div class="icon-box">
+                                <i class="bi bi-lungs"></i>
+                            </div>
+                            <div class="aqi-content">
+                                <h4>AQI: 151 - 200</h4>
+                                <h6>Unhealthy</h6>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 my-2">
+                        <div class="aqi-card" style="color: rgba(198, 8, 8, 0.871); background-color: rgba(198, 8, 8, 0.078);">
+                            <div class="d-flex align-items-center">
+                            <div class="icon-box">
+                                <i class="bi bi-bandaid"></i>
+                            </div>
+                            <div class="aqi-content">
+                                <h4>AQI: 201 - 300</h4>
+                                <h6>Harmful</h6>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 my-2">
+                        <div class="aqi-card" style="color: rgba(132, 9, 111, 0.871); background-color: rgba(132, 9, 112, 0.06);">
+                            <div class="d-flex align-items-center">
+                            <div class="icon-box">
+                                <i class="bi bi-patch-exclamation"></i>
+                            </div>
+                            <div class="aqi-content">
+                                <h4>AQI: 301 - 500</h4>
+                                <h6>Hazardous</h6>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Air Quality Level info -->
+                <div class="row d-flex justify-content-center">
+                <div class="col-lg-5 my-2">
+                    <div class="ygn-card">
+                    <img src="image/ygn.jpg" alt="Yangon" class="ygn-img">
+                    <div class="ygn-info">
+                        <div>
+                        <h1 class="city-name">YANGON</h1>
+                        <p>AQI level frequently over <b>150</b> in May, 2026</p>
+                        </div>
+                        <div class="mt-5">
+                        <p><mark style="background-color:rgba(228, 96, 114, 0.76); padding: 5px; border-radius: 5px;">Unhealthy</mark><span class="badge rounded-pill text-bg-danger translate-middle top-0 start-100">!</span></p>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Yangon has reached the <b>top 10 most polluted cities</b> in the world by March, 2026. Since then, the national has been working on tackling the issue.</p>
+                    </div>
+                    <button type="button" class="btn air-button" data-bs-toggle="modal" data-bs-target="#more_details">Get details</button>
+                    </div>
+                </div>
+                <div class="col-lg-5 my-2">
+                    <div class="scrollable">
+                    <div class="others">
+                        <div class="others-content">
+                        <div>
+                            <h3 class="city-name">BAGO</h3>
+                            <p class="mb-0">AQI level in May: 76</p>
+                        </div>
+                        <div>
+                            <p class="mt-5"><mark style="background-color:rgb(221, 193, 7); padding: 5px; border-radius: 5px;">Moderate</mark></p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="others">
+                        <div class="others-content">
+                        <div>
+                            <h3 class="city-name">MANDALAY</h3>
+                            <p class="mb-0">AQI level in May: 81</p>
+                        </div>
+                        <div>
+                            <p class="mt-5"><mark style="background-color:rgb(221, 193, 7);; padding: 5px; border-radius: 5px;">Moderate</mark></p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="others">
+                        <div class="others-content">
+                        <div>
+                            <h3 class="city-name">NAYPYITAW</h3>
+                            <p class="mb-0">AQI level in May: 73</p>
+                        </div>
+                        <div>
+                            <p class="mt-5"><mark style="background-color:rgb(221, 193, 7);; padding: 5px; border-radius: 5px;">Moderate</mark></p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="others">
+                        <div class="others-content">
+                        <div>
+                            <h3 class="city-name">TAUNGGYI</h3>
+                            <p class="mb-0">AQI level in May: 79</p>
+                        </div>
+                        <div>
+                            <p class="mt-5"><mark style="background-color:rgb(221, 193, 7);; padding: 5px; border-radius: 5px;">Moderate</mark></p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="others">
+                        <div class="others-content">
+                        <div>
+                            <h3 class="city-name">PATHEIN</h3>
+                            <p class="mb-0">AQI level in May: 71</p>
+                        </div>
+                        <div>
+                            <p class="mt-5"><mark style="background-color:rgb(221, 193, 7);; padding: 5px; border-radius: 5px;">Moderate</mark></p>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- modal start -->
+                    <div class="modal" data-bs-backdrop="static" id="more_details">
+                        <div class="modal-dialog modal-fullscreen">
+                            <div class="modal-content">
+                                <div class="modal-header pe-5">
+                                    <h2 class="modal-title">Details of Yangon air quality</h2>
+                                    <div class="btn-close" data-bs-dismiss="modal"></div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row mt-5 mx-3">
+                                        <div class="col-lg-6 graph">
+                                            <img src="image/graph.png" alt="graph">
+                                        </div>
+                                        <div class="col-lg-5 mx-4" style="font-size: 25px;">
+                                            <li>Yangon has reached the top 10 most polluted cities in the world by February, 2026. <a href="https://asianews.network/yangons-air-pollution-is-ranked-4th-in-the-world-according-to-this-evenings-measurements/" target="_blank">Read <i class="bi bi-arrow-right-short"></i></a></li>
+                                            <li>By the end of March, 2026, the city had exceeded 150. <a href="https://www.iqair.com/eu/newsroom/yangon-among-top-10-most-polluted-cities-in-the-world-3-30-2026" target="_blank">Read <i class="bi bi-arrow-right-short"></i></a></li>
+                                            <li>Considered to be the most polluted city in Myanmar as well.</li>
+                                            <li>These conditions may increase the risk of respiratory issues, worsen heart problems, and impair lung function, particularly for children, the elderly, and people with underlying health conditions. </li>
+                                        </div>
+                                        </div>
+                                    </div>
+                                <div class="modal-footer px-5 d-flex justify-content-between">
+                                    <a style="font-size: large;" target="_blank" href="https://www.aqi.in/dashboard/myanmar/yangon-region/yangon">See real time data of Yangon air quality <i class="bi bi-arrow-right-short"></i></a>
+                                    <button class="btn back-btn" data-bs-dismiss="modal" style="padding: 10px; width: 100px; border-radius: 10px;">Back</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- modal end -->
+                </div>
+            </div>
+        </div>
+    <!-- Air quality end -->
+
+    <!-- EV Card start -->
+            <div class="ev-card col-lg-12" id="ev_transport">
+                <div class="row">
+                    <div class="col-md-11 d-flex flex-column flex-md-row justify-content-center align-items-center mx-auto">
+                        <div class="col-lg-3 col-md-4 ev-card-title pe-4 my-4">
+                            <h1 style="color: #ff8c00;"><b>Current existing smart sustainable developments in Yangon, Myanmar</b></h1>
+                        </div>
+                        <div class="col-lg-3 col-md-4 card mx-3 my-1">
+                        <img src="image/ev_train.jpg" alt="train">
+                            <div class="overlay">
+                                <h3><b>Recent electric train in Yangon</b></h3>
+                            </div>
+                            <div class="card-hidden-content">
+                                <p style="font-size: 25px;">Circular railway in Yangon available since April, 2026</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 card mx-3 my-1">
+                        <img src="image/ev_bus.jpg" alt="bus">
+                            <div class="overlay">
+                                <h3><b>New EV bus development</b></h3>
+                            </div>
+                            <div class="card-hidden-content">
+                                <p style="font-size: 25px;">Soon to be launched new and better YBS bus system</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 card mx-3 my-1">
+                        <img src="image/ev_taxi.jpg" alt="taxi">
+                            <div class="overlay">
+                                <h3><b>Increasing EV taxi service</b></h3>
+                            </div>
+                            <div class="card-hidden-content">
+                               <p style="font-size: 25px;">Rapid change in taxi industry with more convenience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- EV Card end -->
+
+        <!-- smart city connection end -->
+        <div class="container py-5">
+            <div class="main-box">
+                <div class="city-tag">
+                    SMART CITY CONNECTION
+                </div>
+
+                <h1 class="title">
+                    Completely <span class="highlight">Smart</span> and 
+                    <span class="highlight">Sustainable</span>. Why?
+                </h1>
+
+                <p class="description">
+                    Smart cities use technology, renewable energy, and modern transportation
+                    systems to improve daily life. They reduce pollution, save energy,
+                    and help create safer and cleaner environments for everyone.
+                </p>
+
+                <ul class="smart-list">
+                    <li>
+                        <div class="icon">1</div>
+                        Smart traffic systems reduce congestion and save time
+                    </li>
+
+                    <li>
+                        <div class="icon">2</div>
+                        Renewable energy supports cleaner and greener cities
+                    </li>
+
+                    <li>
+                        <div class="icon">3</div>
+                        Smart public transport lowers pollution and fuel use
+                    </li>
+
+                    <li>
+                        <div class="icon">4</div>
+                        Digital technology improves safety and city management
+                    </li>
+                </ul>
+
+                <div class="bottom-box">
+                    <h4>Future of Smart Cities</h4>
+                    <p>
+                        Smart cities combine innovation and sustainability to create
+                        better living conditions. With cleaner energy, efficient transport,
+                        and intelligent systems, cities can become safer, healthier,
+                        and more environmentally friendly in the future.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- smart city connection end -->
+
+        <!-- FAQ start -->
+        <div class="faq-box m-5">
+            <h2 class="faq-heading">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#one">
+                    What is a smart city connection?
+                <span class="arrow"><i class="bi bi-chevron-down"></i></span>
+                </button>
+                <div class="collapse" id="one">
+                    <p class="faq-answer">A smart city connection refers to how different systems in a city—like transport, electricity, internet, waste management, and public services—are linked using technology and data. This helps the city run more efficiently, reduces waste of resources, and improves daily life for citizens. For example, traffic lights connected to real-time traffic data can reduce jams.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#two">
+                    How does sustainable transportation help Yangon?
+                <span class="arrow"><i class="bi bi-chevron-down"></i></span>
+                </button>
+                <div class="collapse" id="two">
+                    <p class="faq-answer">In Yangon, sustainable transportation (like buses, trains, cycling systems, and shared transport) helps reduce air pollution and traffic congestion. It also lowers fuel use and makes travel more affordable for people. Systems like the Yangon Circular Railway give commuters a low-cost and eco-friendly way to move around the city.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#three">
+                    How does this website promote public awareness?
+                    <span class="arrow"><i class="bi bi-chevron-down"></i></span>
+                </button>
+                <div class="collapse" id="three">
+                    <p class="faq-answer">A website like this promotes public awareness by sharing information about smart living, sustainability, and city improvement. It can educate people on environmental issues, encourage better habits (like using public transport), and show how citizens can help improve their city. Visuals, facts, and interactive content make the message easier to understand and remember.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#four">
+                    How can public transport improve city life?
+                    <span class="arrow"><i class="bi bi-chevron-down"></i></span>
+                </button>
+                <div class="collapse" id="four">
+                    <p class="faq-answer">Public transport improves city life by making travel easier, cheaper, and more organized. It reduces the number of private vehicles on the road, which leads to less traffic and cleaner air. It also helps people reach schools, workplaces, and services more efficiently, improving productivity and quality of life.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn" data-bs-toggle="collapse" data-bs-target="#five">
+                    Why is reducing traffic congestion important?
+                    <span class="arrow"><i class="bi bi-chevron-down"></i></span>
+                </button>
+                <div class="collapse" id="five">
+                    <p class="faq-answer">Reducing traffic congestion is important because it saves time, reduces fuel consumption, and lowers air pollution. Heavy traffic also increases stress and accident risks. When congestion is reduced, cities become more efficient, safer, and healthier places to live.</p>
+                </div>
+            </div>
+        </div>
+        <!-- FAQ end -->
+
+    <!-- footer start -->
+    <footer class="pt-5">
+        <div class="container">
+            <div class="row">
+                <!-- left section -->
+                <div class="col-md-6 mb-4">
+                    <h2><span class="accent">Transitfy</span></h2>
+                    <p class="small">
+                        Transitfy is a Smart Mobility & Traffic Management Portal designed to improve urban transportation,
+                        reduce traffic congestion, and promote safer, smarter, and more sustainable mobility systems.
+                    </p>
+                    <h5 class="mt-4">Stay Updated</h5>
+                    <form>
+                        <div class="input-group mt-2">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+
+                            <button type="reset" class="btn">
+                                <i class="bi bi-send-fill"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- right section -->
+                <div class="col-md-6 border-start ps-4">
+                    <div class="row small">
+                        <div class="col-md-4 mb-3">
+                            <h6 class="border-bottom pb-1">Pages</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-chevron-right"></i> <a href="index.html" style="text-decoration: none; color: white;">Home</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="aboutus.html" style="text-decoration: none; color: white;">About Us</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="act_now.html" style="text-decoration: none; color: white;">Take Action</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="https://www.canva.com/design/DAHKffhsYi8/CIiL7inv6dd82UL4MmbrsA/edit" target="_blank" style="text-decoration: none; color: white;">Credit</a></li>
+                            </ul>
+                        </div>
+
+                      
+                        <div class="col-md-4 mb-3">
+                            <h6 class="border-bottom pb-1">Members</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-person"></i> Yay Chan Maung</li>
+                                <li><i class="bi bi-person"></i> Kyi Phyu Phyo Thant</li>
+                                <li><i class="bi bi-person"></i> Myat Noe Thadar</li>
+                                <li><i class="bi bi-person"></i> Sai Kyaut Zet Hin Hseng</li>
+                            </ul>
+                        </div>
+
+
+                        <div class="col-md-4 mb-3">
+                            <h6 class="border-bottom pb-1">Contact</h6>
+                            <p><i class="bi bi-geo-alt-fill accent"></i> Yangon, Myanmar</p>
+                            <p><i class="bi bi-telephone-fill accent"></i> +959 78934240</p>
+                            <p><i class="bi bi-envelope-fill accent"></i> transitfy.portal@gmail.com</p>
+
+                            <div class="icon-hover mt-2">
+                                <i class="bi bi-facebook me-2"></i>
+                                <i class="bi bi-youtube me-2"></i>
+                                <i class="bi bi-instagram me-2"></i>
+                                <i class="bi bi-twitter-x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4 py-3 footer-bottom">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start small">
+                <span class="mb-2 mb-md-0">©2026 Transitfy. All rights reserved.</span>
+                <div class="d-flex gap-3">
+                    <span>Privacy Policy</span>
+                    <span>Terms of Service</span>
+                    <span>Cookies</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+<!-- Bootstrip CDN JS Link -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<!-- AOS JS Link -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Initiate AOS -->
+<script>AOS.init();</script>
+
+</body>
+</html>
